@@ -1,6 +1,6 @@
 # Project Name
 
-this my own Node.js express.js typeScript and mongoDb template.
+Kanban Board Assignment (Backend Only).
 
 ## Prerequisites
 
@@ -16,11 +16,11 @@ To set up this project locally, follow these steps:
 1. Clone the repository:
 
    ```bash
-   git clone https://github.com/abhaysinghs772/node_express_typescript_starter_template
+   git clone https://github.com/abhaysinghs772/kanban_board.git
 
 2. go to the cloned project. 
     ```bash
-    cd node_express_typescript_starter_template
+    cd kanban_board
 
 3. Install dependencies:
     ```bash
@@ -30,8 +30,8 @@ To set up this project locally, follow these steps:
 
 5. run the project 
     ```bash
-    npm run:start
+    npm run start:dev
 
-6. In order to test/check task's api first signup and then do login by their respective apis and then use the token as : 
+6. In order to test/check api's first signup and then do login by their respective apis and then use the token as : 
     ```bash
     authorication: Bearear <your_token>
