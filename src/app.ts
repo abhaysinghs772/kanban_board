@@ -10,7 +10,7 @@ import { Request, Response } from 'express';
 dotenv.config();
 
 /* ROUTES */
-import { authRoute } from './routes/index';
+import { authRoute, kanbanRoute} from './routes/index';
 
 /* APP */
 const app = express();
@@ -20,6 +20,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(authRoute);
+app.use(kanbanRoute);
 
 /* mongoDB connection */
 // chnage this string to your own db's connection string

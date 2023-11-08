@@ -2,7 +2,7 @@ import { Request, Response } from 'express';
 import bcrypt from 'bcrypt';
 import jwt from 'jsonwebtoken';
 
-import Usermodel from '../models/user.model';
+import { Usermodel } from '../models';
 
 import { createUserBody } from '../interfaces/user/createUser.body';
 import dotenv from 'dotenv';
@@ -44,7 +44,10 @@ export async function logIn(req: Request, res: Response) {
       return res.status(400).json({ message: 'Invalid credentials' });
     }
 
-    const isMatch = await bcrypt.compare(password, user.password);
+    // console.log(Object.keys(user)); // for debugging purpose
+    let hasshedpassword = user._doc.password
+
+    const isMatch = await bcrypt.compare(password, hasshedpassword);
     if (!isMatch) {
       return res.status(400).json({ message: 'Invalid credentials' });
     }
@@ -60,6 +63,7 @@ export async function logIn(req: Request, res: Response) {
 
     res.status(200).json({ message: 'successfully logged in', token });
   } catch (error) {
+    console.log(error);
     res.status(500).json({ message: 'Server error' });
   }
 }

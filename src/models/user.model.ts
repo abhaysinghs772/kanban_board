@@ -1,6 +1,4 @@
-import mongoose from 'mongoose';
-
-const { Schema, model } = mongoose;
+import mongoose , { Schema } from 'mongoose';
 
 const userSchema = new Schema(
   {
@@ -25,6 +23,4 @@ const userSchema = new Schema(
   { timestamps: true },
 ); // timestamps to add created_at and updated_at
 
-const Usermodel = model('User', userSchema);
-
-export default Usermodel;
+export const Usermodel = mongoose.models.User || mongoose.model('User', userSchema);
