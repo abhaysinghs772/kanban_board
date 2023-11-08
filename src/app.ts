@@ -5,6 +5,7 @@ import cookieParser from 'cookie-parser';
 import logger from 'morgan';
 import bodyParser from 'body-parser';
 import mongoose from 'mongoose';
+import { Request, Response } from 'express';
 
 dotenv.config();
 
@@ -30,7 +31,12 @@ async function connectDB() {
   } catch (error) {
     console.error('Error connecting to MongoDB Atlas:', error);
   }
-}
+} 
+
+// Only for Test
+app.get('/', (req: Request, res:Response)=> {
+	res.status(200).json({ message: 'this is root route' });	
+});
 
 app.listen(3000, async () => {
   await connectDB();
