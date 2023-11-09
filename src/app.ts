@@ -10,7 +10,12 @@ import { Request, Response } from 'express';
 dotenv.config();
 
 /* ROUTES */
-import { authRoute, kanbanRoute} from './routes/index';
+import { 
+  authRoute, 
+  kanbanRoute,
+  kanbanColumnsRoute,
+  kanbanItemsRoute
+} from './routes';
 
 /* APP */
 const app = express();
@@ -19,8 +24,12 @@ app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
+
+/* CONSUMING/USING ALL ROUTES */
 app.use(authRoute);
 app.use(kanbanRoute);
+app.use(kanbanColumnsRoute);
+app.use(kanbanItemsRoute);
 
 /* mongoDB connection */
 // chnage this string to your own db's connection string

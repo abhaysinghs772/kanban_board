@@ -1,11 +1,17 @@
 import mongoose, { Schema } from 'mongoose';
 
 // used the snake case because the schema name contains more then 3 words 
-const kanban_Column_Schema = new Schema(
+const kanban_Items_Schema = new Schema(
   {
     name: {
       type: String,
       required: true,
+    },
+    description: {
+      type : String,
+    },
+    due_date: {
+      type: Date
     },
     // in order to keep track of who has created the resource
     created_By: {
@@ -31,5 +37,5 @@ const kanban_Column_Schema = new Schema(
   { timestamps: true },
 ); 
 
-export const KanbanItemModel
-  = mongoose.models.Kanban_item || mongoose.model('Kanban_item', kanban_Column_Schema);
+export const KanbanItemsModel
+  = mongoose.models.Kanban_item || mongoose.model('Kanban_item', kanban_Items_Schema);

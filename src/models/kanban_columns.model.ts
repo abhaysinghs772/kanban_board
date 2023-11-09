@@ -13,7 +13,7 @@ const kanban_Column_Schema = new Schema(
       ref: 'User',
       required: true
     },
-    // here "required: true" is given because a kanban_cloumn is related to a kanban_board
+    // here "required: true" is given because a kanban_column is related to a kanban_board
     kanban_board: {
       type: Schema.ObjectId,
       ref: 'Kanban_board',

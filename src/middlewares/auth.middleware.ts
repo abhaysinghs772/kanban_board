@@ -18,7 +18,6 @@ export function authMiddleware(
       'some-secret-encrypeted',
     ) as JwtPayload;
 
-    // change this in future or create custom.d.ts and pass it in tsconfig
     req.user = decoded.user;
     next();
   } catch (error) {

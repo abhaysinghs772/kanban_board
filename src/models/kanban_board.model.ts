@@ -20,7 +20,6 @@ const kanban_Board_Schema = new Schema(
     // required: true is not given below because, I am assuming that a user can create or delete 
     // these columns and recreate them if required or they can create their own columns as well
     columns: [{
-      name : String,
       type: Schema.ObjectId,
       ref: 'Kanban_column'
     }]
