@@ -3,7 +3,10 @@ import { authMiddleware } from "../middlewares";
 
 import {
     create_kanban_items,
-
+    getAllItemss,
+    getSingleItem,
+    updateItem,
+    removeItem,
 } from "../controllers";
 
 const kanbanItemsRoute = Router();
@@ -25,6 +28,7 @@ kanbanItemsRoute
     .get(
         "/get-kanban-item/:kanban-item_id", 
         authMiddleware, 
+        getSingleItem
     );
 
 /**
@@ -34,6 +38,7 @@ kanbanItemsRoute
     .get(
         "/get-all-kanban-items", 
         authMiddleware, 
+        getAllItemss
     );
 
 /**
@@ -43,6 +48,7 @@ kanbanItemsRoute
     .put(
         "/update-kanban-item/:kanban_item_id", 
         authMiddleware, 
+        updateItem
     );
 
 /**
@@ -52,6 +58,7 @@ kanbanItemsRoute
     .delete(
         "/delete-kanban-item/:kanban-item_id",
         authMiddleware,
+        removeItem
     );
 
 export { kanbanItemsRoute };

@@ -1,0 +1,483 @@
+{
+	"info": {
+		"_postman_id": "d3fe6cd0-6f3e-4c62-8c2d-4100a11d3e76",
+		"name": "kanban_board_local",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "22336305"
+	},
+	"item": [
+		{
+			"name": "kanban_board",
+			"item": [
+				{
+					"name": "create board",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjoie1wiX2lkXCI6XCI2NTRjNTdiMGJiZTBjNWExM2M3ZTEwYTdcIixcIm5hbWVcIjpcIkFiaGF5IEt1bWFyXCIsXCJwYXNzd29yZFwiOlwiJDJiJDEwJG5QdW9qeHJCcXNJS3lUMUI3Uk1kTnVhdzF2N0I5MWhVQVROR0ZoQWQ5VWVqTEtZOFRSWWh1XCIsXCJlbWFpbFwiOlwiYWJoYXlzaW5nczc3MkBnbWFpbC5jb21cIixcInBob25lX251bWJlclwiOlwiODcwMDk3MjIxOVwiLFwiY3JlYXRlZEF0XCI6XCIyMDIzLTExLTA5VDAzOjUzOjIwLjExOFpcIixcInVwZGF0ZWRBdFwiOlwiMjAyMy0xMS0wOVQwMzo1MzoyMC4xMThaXCIsXCJfX3ZcIjowfSIsImlhdCI6MTY5OTUxNjYyMiwiZXhwIjoxNjk5NTMxMDIyfQ.CYe5C3-NfCzC7lstKHkAD9TiEBIrMhxwbiXesuv6j-I"
+							}
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"fresh board test 10th\",\r\n    \"description\": \"some random description\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://13.51.233.157:3000/create-kanban-board"
+					},
+					"response": []
+				},
+				{
+					"name": "get all boards",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjoie1wiX2lkXCI6XCI2NTRiNTUzMGZiYWU2YjE5YWQyYThhYmFcIixcIm5hbWVcIjpcIkFiaGF5IEt1bWFyXCIsXCJwYXNzd29yZFwiOlwiJDJiJDEwJGUxYXQ5amJwRjlPRFhNcjd0UlR3Y09MemdJQTVJVHEybDA2VkE1eC9NZFZCZ1dCa281OXpLXCIsXCJlbWFpbFwiOlwiYWJoYXlzaW5nczc3MkBnbWFpbC5jb21cIixcInBob25lX251bWJlclwiOlwiODcwMDk3MjIxOVwiLFwiY3JlYXRlZEF0XCI6XCIyMDIzLTExLTA4VDA5OjMwOjI0LjM4OVpcIixcInVwZGF0ZWRBdFwiOlwiMjAyMy0xMS0wOFQwOTozMDoyNC4zODlaXCIsXCJfX3ZcIjowfSIsImlhdCI6MTY5OTQ0NTI2OSwiZXhwIjoxNjk5NDU5NjY5fQ.hWOXv3ON8fSkTr2uyqbfZX-rGcCI-7krDEc_jipJMMA"
+							}
+						},
+						"method": "GET",
+						"header": [],
+						"url": "http://13.51.233.157:3000/get-all-boards"
+					},
+					"response": []
+				},
+				{
+					"name": "get single board",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjoie1wiX2lkXCI6XCI2NTRiNTUzMGZiYWU2YjE5YWQyYThhYmFcIixcIm5hbWVcIjpcIkFiaGF5IEt1bWFyXCIsXCJwYXNzd29yZFwiOlwiJDJiJDEwJGUxYXQ5amJwRjlPRFhNcjd0UlR3Y09MemdJQTVJVHEybDA2VkE1eC9NZFZCZ1dCa281OXpLXCIsXCJlbWFpbFwiOlwiYWJoYXlzaW5nczc3MkBnbWFpbC5jb21cIixcInBob25lX251bWJlclwiOlwiODcwMDk3MjIxOVwiLFwiY3JlYXRlZEF0XCI6XCIyMDIzLTExLTA4VDA5OjMwOjI0LjM4OVpcIixcInVwZGF0ZWRBdFwiOlwiMjAyMy0xMS0wOFQwOTozMDoyNC4zODlaXCIsXCJfX3ZcIjowfSIsImlhdCI6MTY5OTQ0NTI2OSwiZXhwIjoxNjk5NDU5NjY5fQ.hWOXv3ON8fSkTr2uyqbfZX-rGcCI-7krDEc_jipJMMA"
+							}
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://13.51.233.157:3000/get-board/:kanban_board_id",
+							"host": [
+								"http://13.51.233.157"
+							],
+							"port": "3000",
+							"path": [
+								"get-board",
+								":kanban_board_id"
+							],
+							"query": [
+								{
+									"key": "kanban_board_id",
+									"value": null,
+									"disabled": true
+								}
+							],
+							"variable": [
+								{
+									"key": "kanban_board_id",
+									"value": "<your mongo knaban_board_id>"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update board",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjoie1wiX2lkXCI6XCI2NTRiNTUzMGZiYWU2YjE5YWQyYThhYmFcIixcIm5hbWVcIjpcIkFiaGF5IEt1bWFyXCIsXCJwYXNzd29yZFwiOlwiJDJiJDEwJGUxYXQ5amJwRjlPRFhNcjd0UlR3Y09MemdJQTVJVHEybDA2VkE1eC9NZFZCZ1dCa281OXpLXCIsXCJlbWFpbFwiOlwiYWJoYXlzaW5nczc3MkBnbWFpbC5jb21cIixcInBob25lX251bWJlclwiOlwiODcwMDk3MjIxOVwiLFwiY3JlYXRlZEF0XCI6XCIyMDIzLTExLTA4VDA5OjMwOjI0LjM4OVpcIixcInVwZGF0ZWRBdFwiOlwiMjAyMy0xMS0wOFQwOTozMDoyNC4zODlaXCIsXCJfX3ZcIjowfSIsImlhdCI6MTY5OTQ0NTI2OSwiZXhwIjoxNjk5NDU5NjY5fQ.hWOXv3ON8fSkTr2uyqbfZX-rGcCI-7krDEc_jipJMMA"
+							}
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"My third board\",\r\n    \"description\": \"some random description edited\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://13.51.233.157:3000/update-board/:kanban_board_id",
+							"host": [
+								"http://13.51.233.157"
+							],
+							"port": "3000",
+							"path": [
+								"update-board",
+								":kanban_board_id"
+							],
+							"variable": [
+								{
+									"key": "kanban_board_id",
+									"value": "<your mongo knaban_board_id>"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "remove board",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjoie1wiX2lkXCI6XCI2NTRiNTUzMGZiYWU2YjE5YWQyYThhYmFcIixcIm5hbWVcIjpcIkFiaGF5IEt1bWFyXCIsXCJwYXNzd29yZFwiOlwiJDJiJDEwJGUxYXQ5amJwRjlPRFhNcjd0UlR3Y09MemdJQTVJVHEybDA2VkE1eC9NZFZCZ1dCa281OXpLXCIsXCJlbWFpbFwiOlwiYWJoYXlzaW5nczc3MkBnbWFpbC5jb21cIixcInBob25lX251bWJlclwiOlwiODcwMDk3MjIxOVwiLFwiY3JlYXRlZEF0XCI6XCIyMDIzLTExLTA4VDA5OjMwOjI0LjM4OVpcIixcInVwZGF0ZWRBdFwiOlwiMjAyMy0xMS0wOFQwOTozMDoyNC4zODlaXCIsXCJfX3ZcIjowfSIsImlhdCI6MTY5OTQ0NTI2OSwiZXhwIjoxNjk5NDU5NjY5fQ.hWOXv3ON8fSkTr2uyqbfZX-rGcCI-7krDEc_jipJMMA"
+							}
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://13.51.233.157:3000/delete-kanban-board/:kanban_board_id",
+							"host": [
+								"http://13.51.233.157"
+							],
+							"port": "3000",
+							"path": [
+								"delete-kanban-board",
+								":kanban_board_id"
+							],
+							"variable": [
+								{
+									"key": "kanban_board_id",
+									"value": "<your mongo knaban_board_id>"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "routes for signup and login",
+			"item": [
+				{
+					"name": "signUp_user",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Abhay Kumar\",\r\n    \"password\": \"12345678\",\r\n    \"email\": \"abhaysings772@gmail.com\",\r\n    \"phone_number\": \"8700972219\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://13.51.233.157:3000/signup"
+					},
+					"response": []
+				},
+				{
+					"name": "logIn_user",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjoie1wiX2lkXCI6XCI2NTRiNTUzMGZiYWU2YjE5YWQyYThhYmFcIixcIm5hbWVcIjpcIkFiaGF5IEt1bWFyXCIsXCJwYXNzd29yZFwiOlwiJDJiJDEwJGUxYXQ5amJwRjlPRFhNcjd0UlR3Y09MemdJQTVJVHEybDA2VkE1eC9NZFZCZ1dCa281OXpLXCIsXCJlbWFpbFwiOlwiYWJoYXlzaW5nczc3MkBnbWFpbC5jb21cIixcInBob25lX251bWJlclwiOlwiODcwMDk3MjIxOVwiLFwiY3JlYXRlZEF0XCI6XCIyMDIzLTExLTA4VDA5OjMwOjI0LjM4OVpcIixcInVwZGF0ZWRBdFwiOlwiMjAyMy0xMS0wOFQwOTozMDoyNC4zODlaXCIsXCJfX3ZcIjowfSIsImlhdCI6MTY5OTQ0NTI2OSwiZXhwIjoxNjk5NDU5NjY5fQ.hWOXv3ON8fSkTr2uyqbfZX-rGcCI-7krDEc_jipJMMA"
+							}
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"abhaysings772@gmail.com\",\r\n    \"password\": \"12345678\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://13.51.233.157:3000/login"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "kanban_columns",
+			"item": [
+				{
+					"name": "create column",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjoie1wiX2lkXCI6XCI2NTRjNTdiMGJiZTBjNWExM2M3ZTEwYTdcIixcIm5hbWVcIjpcIkFiaGF5IEt1bWFyXCIsXCJwYXNzd29yZFwiOlwiJDJiJDEwJG5QdW9qeHJCcXNJS3lUMUI3Uk1kTnVhdzF2N0I5MWhVQVROR0ZoQWQ5VWVqTEtZOFRSWWh1XCIsXCJlbWFpbFwiOlwiYWJoYXlzaW5nczc3MkBnbWFpbC5jb21cIixcInBob25lX251bWJlclwiOlwiODcwMDk3MjIxOVwiLFwiY3JlYXRlZEF0XCI6XCIyMDIzLTExLTA5VDAzOjUzOjIwLjExOFpcIixcInVwZGF0ZWRBdFwiOlwiMjAyMy0xMS0wOVQwMzo1MzoyMC4xMThaXCIsXCJfX3ZcIjowfSIsImlhdCI6MTY5OTUxNjYyMiwiZXhwIjoxNjk5NTMxMDIyfQ.CYe5C3-NfCzC7lstKHkAD9TiEBIrMhxwbiXesuv6j-I"
+							}
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"custom knabancolumn-1\",\r\n    \"kanban_board_id\": \"<your mongo knaban_board_id>\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://13.51.233.157:3000/create-kanban-column"
+					},
+					"response": []
+				},
+				{
+					"name": "get all columns",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjoie1wiX2lkXCI6XCI2NTRjNTdiMGJiZTBjNWExM2M3ZTEwYTdcIixcIm5hbWVcIjpcIkFiaGF5IEt1bWFyXCIsXCJwYXNzd29yZFwiOlwiJDJiJDEwJG5QdW9qeHJCcXNJS3lUMUI3Uk1kTnVhdzF2N0I5MWhVQVROR0ZoQWQ5VWVqTEtZOFRSWWh1XCIsXCJlbWFpbFwiOlwiYWJoYXlzaW5nczc3MkBnbWFpbC5jb21cIixcInBob25lX251bWJlclwiOlwiODcwMDk3MjIxOVwiLFwiY3JlYXRlZEF0XCI6XCIyMDIzLTExLTA5VDAzOjUzOjIwLjExOFpcIixcInVwZGF0ZWRBdFwiOlwiMjAyMy0xMS0wOVQwMzo1MzoyMC4xMThaXCIsXCJfX3ZcIjowfSIsImlhdCI6MTY5OTUxNjYyMiwiZXhwIjoxNjk5NTMxMDIyfQ.CYe5C3-NfCzC7lstKHkAD9TiEBIrMhxwbiXesuv6j-I"
+							}
+						},
+						"method": "GET",
+						"header": [],
+						"url": "http://13.51.233.157:3000/get-all-kanban-columns"
+					},
+					"response": []
+				},
+				{
+					"name": "get single column",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://13.51.233.157;3000/get-kanban-column/:kanban-column_id",
+							"host": [
+								"http://13.51.233.157;3000"
+							],
+							"path": [
+								"get-kanban-column",
+								":kanban-column_id"
+							],
+							"variable": [
+								{
+									"key": "kanban-column_id",
+									"value": "<your mongo column_id>"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update column",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "http://13.51.233.157;3000/update-kanban-column/:kanban-column_id",
+							"host": [
+								"http://13.51.233.157;3000"
+							],
+							"path": [
+								"update-kanban-column",
+								":kanban-column_id"
+							],
+							"variable": [
+								{
+									"key": "kanban-column_id",
+									"value": "<your mongo column_id>"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "remove column",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://13.51.233.157;3000/delete-kanban-column/:kanban-column_id",
+							"host": [
+								"http://13.51.233.157;3000"
+							],
+							"path": [
+								"delete-kanban-column",
+								":kanban-column_id"
+							],
+							"variable": [
+								{
+									"key": "kanban-column_id",
+									"value": "<your mongo column_id>"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "kanban_items",
+			"item": [
+				{
+					"name": "get all items",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjoie1wiX2lkXCI6XCI2NTRjNTdiMGJiZTBjNWExM2M3ZTEwYTdcIixcIm5hbWVcIjpcIkFiaGF5IEt1bWFyXCIsXCJwYXNzd29yZFwiOlwiJDJiJDEwJG5QdW9qeHJCcXNJS3lUMUI3Uk1kTnVhdzF2N0I5MWhVQVROR0ZoQWQ5VWVqTEtZOFRSWWh1XCIsXCJlbWFpbFwiOlwiYWJoYXlzaW5nczc3MkBnbWFpbC5jb21cIixcInBob25lX251bWJlclwiOlwiODcwMDk3MjIxOVwiLFwiY3JlYXRlZEF0XCI6XCIyMDIzLTExLTA5VDAzOjUzOjIwLjExOFpcIixcInVwZGF0ZWRBdFwiOlwiMjAyMy0xMS0wOVQwMzo1MzoyMC4xMThaXCIsXCJfX3ZcIjowfSIsImlhdCI6MTY5OTUxNjYyMiwiZXhwIjoxNjk5NTMxMDIyfQ.CYe5C3-NfCzC7lstKHkAD9TiEBIrMhxwbiXesuv6j-I"
+							}
+						},
+						"method": "GET",
+						"header": [],
+						"url": "http://13.51.233.157:3000/get-all-kanban-items"
+					},
+					"response": []
+				},
+				{
+					"name": "get item",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjoie1wiX2lkXCI6XCI2NTRjNTdiMGJiZTBjNWExM2M3ZTEwYTdcIixcIm5hbWVcIjpcIkFiaGF5IEt1bWFyXCIsXCJwYXNzd29yZFwiOlwiJDJiJDEwJG5QdW9qeHJCcXNJS3lUMUI3Uk1kTnVhdzF2N0I5MWhVQVROR0ZoQWQ5VWVqTEtZOFRSWWh1XCIsXCJlbWFpbFwiOlwiYWJoYXlzaW5nczc3MkBnbWFpbC5jb21cIixcInBob25lX251bWJlclwiOlwiODcwMDk3MjIxOVwiLFwiY3JlYXRlZEF0XCI6XCIyMDIzLTExLTA5VDAzOjUzOjIwLjExOFpcIixcInVwZGF0ZWRBdFwiOlwiMjAyMy0xMS0wOVQwMzo1MzoyMC4xMThaXCIsXCJfX3ZcIjowfSIsImlhdCI6MTY5OTUxNjYyMiwiZXhwIjoxNjk5NTMxMDIyfQ.CYe5C3-NfCzC7lstKHkAD9TiEBIrMhxwbiXesuv6j-I"
+							}
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://13.51.233.157;3000/get-kanban-item/:kanban-item_id",
+							"host": [
+								"http://13.51.233.157;3000"
+							],
+							"path": [
+								"get-kanban-item",
+								":kanban-item_id"
+							],
+							"variable": [
+								{
+									"key": "kanban-item_id",
+									"value": "<your mongo item_id>"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "create item",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjoie1wiX2lkXCI6XCI2NTRjNTdiMGJiZTBjNWExM2M3ZTEwYTdcIixcIm5hbWVcIjpcIkFiaGF5IEt1bWFyXCIsXCJwYXNzd29yZFwiOlwiJDJiJDEwJG5QdW9qeHJCcXNJS3lUMUI3Uk1kTnVhdzF2N0I5MWhVQVROR0ZoQWQ5VWVqTEtZOFRSWWh1XCIsXCJlbWFpbFwiOlwiYWJoYXlzaW5nczc3MkBnbWFpbC5jb21cIixcInBob25lX251bWJlclwiOlwiODcwMDk3MjIxOVwiLFwiY3JlYXRlZEF0XCI6XCIyMDIzLTExLTA5VDAzOjUzOjIwLjExOFpcIixcInVwZGF0ZWRBdFwiOlwiMjAyMy0xMS0wOVQwMzo1MzoyMC4xMThaXCIsXCJfX3ZcIjowfSIsImlhdCI6MTY5OTUxNjYyMiwiZXhwIjoxNjk5NTMxMDIyfQ.CYe5C3-NfCzC7lstKHkAD9TiEBIrMhxwbiXesuv6j-I"
+							}
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"1st item\",\r\n    \"description\": \"some random description\",\r\n    \"kanban_board\": \"<your mongo knaban_board_id>\",\r\n    \"kanban_column\": \"<your mongo column_id>\",\r\n    \"due_date\": \"2023-11-09T07:38:49.509+00:00\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://13.51.233.157;3000/create-kanban-item"
+					},
+					"response": []
+				},
+				{
+					"name": "update item",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjoie1wiX2lkXCI6XCI2NTRjNTdiMGJiZTBjNWExM2M3ZTEwYTdcIixcIm5hbWVcIjpcIkFiaGF5IEt1bWFyXCIsXCJwYXNzd29yZFwiOlwiJDJiJDEwJG5QdW9qeHJCcXNJS3lUMUI3Uk1kTnVhdzF2N0I5MWhVQVROR0ZoQWQ5VWVqTEtZOFRSWWh1XCIsXCJlbWFpbFwiOlwiYWJoYXlzaW5nczc3MkBnbWFpbC5jb21cIixcInBob25lX251bWJlclwiOlwiODcwMDk3MjIxOVwiLFwiY3JlYXRlZEF0XCI6XCIyMDIzLTExLTA5VDAzOjUzOjIwLjExOFpcIixcInVwZGF0ZWRBdFwiOlwiMjAyMy0xMS0wOVQwMzo1MzoyMC4xMThaXCIsXCJfX3ZcIjowfSIsImlhdCI6MTY5OTUxNjYyMiwiZXhwIjoxNjk5NTMxMDIyfQ.CYe5C3-NfCzC7lstKHkAD9TiEBIrMhxwbiXesuv6j-I"
+							}
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"1st item edited\",\r\n    \"description\": \"some random description edited\",\r\n    \"kanban_board\": \"<your mongo knaban_board_id>\",\r\n    \"kanban_column\": \"<your mongo column_id>\",\r\n    \"due_date\": \"2023-11-09T07:38:49.509+00:00\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://13.51.233.157:3000/update-kanban-item/:kanban_item_id",
+							"host": [
+								"http://13.51.233.157"
+							],
+							"port": "3000",
+							"path": [
+								"update-kanban-item",
+								":kanban_item_id"
+							],
+							"variable": [
+								{
+									"key": "kanban_item_id",
+									"value": "<your mongo item_id>"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "remove item",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjoie1wiX2lkXCI6XCI2NTRjNTdiMGJiZTBjNWExM2M3ZTEwYTdcIixcIm5hbWVcIjpcIkFiaGF5IEt1bWFyXCIsXCJwYXNzd29yZFwiOlwiJDJiJDEwJG5QdW9qeHJCcXNJS3lUMUI3Uk1kTnVhdzF2N0I5MWhVQVROR0ZoQWQ5VWVqTEtZOFRSWWh1XCIsXCJlbWFpbFwiOlwiYWJoYXlzaW5nczc3MkBnbWFpbC5jb21cIixcInBob25lX251bWJlclwiOlwiODcwMDk3MjIxOVwiLFwiY3JlYXRlZEF0XCI6XCIyMDIzLTExLTA5VDAzOjUzOjIwLjExOFpcIixcInVwZGF0ZWRBdFwiOlwiMjAyMy0xMS0wOVQwMzo1MzoyMC4xMThaXCIsXCJfX3ZcIjowfSIsImlhdCI6MTY5OTUxNjYyMiwiZXhwIjoxNjk5NTMxMDIyfQ.CYe5C3-NfCzC7lstKHkAD9TiEBIrMhxwbiXesuv6j-I"
+							}
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://13.51.233.157:3000/delete-kanban-item/:kanban-item_id",
+							"host": [
+								"http://13.51.233.157"
+							],
+							"port": "3000",
+							"path": [
+								"delete-kanban-item",
+								":kanban-item_id"
+							],
+							"variable": [
+								{
+									"key": "kanban-item_id",
+									"value": "< your mongo item_id >"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "get root route",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "http://13.51.233.157:3000"
+			},
+			"response": []
+		}
+	]
+}

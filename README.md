@@ -35,3 +35,11 @@ To set up this project locally, follow these steps:
 6. In order to test/check api's first signup and then do login by their respective apis and then use the token as : 
     ```bash
     authorication: Bearear <your_token>
+
+7. find the api colections in the root directory of this project and then import it in your postman
+
+8. this project is Deployed on AWS EC2 Ubuntu instance. 
+
+9. All the apis are very simple and can be extended as well 
+
+10. this project is using interfaces apart from this we cn also use dto-validator/class-vallidators to valid incoming data in much better way.
